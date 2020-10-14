@@ -7,7 +7,9 @@ import { BeatSettings, BeatSettingsProd } from '../settings';
     template: `
         <div style="border: 2px solid blue; padding: 10px; display: flex; justify-content: space-between; margin-bottom: 10px">
             <h2>{{ beat.author }} <b>{{ beat.title }}</b></h2>
-            <button style="width: 250px; background-color: blue; color: white" *ngIf="isDownload">BUY</button>
+            <button (click)="btnHandler(beat.title)"
+                    style="width: 250px; background-color: blue; color: white" *ngIf="isDownload">BUY
+            </button>
         </div>
     `
 })
@@ -19,6 +21,10 @@ export class ProdBeatComponent {
     constructor(settings: BeatSettings) {
         this.beat = (settings as BeatSettingsProd).beat;
         this.isDownload = (settings as BeatSettingsProd).isDownload;
+    }
+
+    btnHandler(title: string) {
+        alert(`i am btn handler, you click on ${ title }`);
     }
 
 }
