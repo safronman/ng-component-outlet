@@ -15,6 +15,7 @@ export class ProdTrackListComponent extends CoreTrackListComponent {
 
     componentClass = ProdBeatComponent;
 
+    // переопределение пропсов
     getProps(beat: IBeat): BeatSettingsProd {
         return {beat, isDownload: true};
     }

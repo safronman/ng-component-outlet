@@ -8,7 +8,7 @@ import { BeatSettings, BeatSettingsProd } from '../settings';
         <div style="border: 2px solid blue; padding: 10px; display: flex; justify-content: space-between; margin-bottom: 10px">
             <h2>{{ beat.author }} <b>{{ beat.title }}</b></h2>
             <button (click)="btnHandler(beat.title)"
-                    style="width: 250px; background-color: blue; color: white" *ngIf="isDownload">BUY
+                    style="width: 250px; background-color: blue; color: white" *ngIf="isDownload">Download
             </button>
         </div>
     `
@@ -24,7 +24,7 @@ export class ProdBeatComponent {
     }
 
     btnHandler(title: string) {
-        alert(`i am btn handler, you click on ${ title }`);
+        alert(`i am btn handler, you download ${ title } beat`);
     }
 
 }
